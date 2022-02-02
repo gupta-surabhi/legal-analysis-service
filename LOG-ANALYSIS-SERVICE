@@ -1,106 +1,528 @@
-2022-02-02 23:19:44.051  INFO 29808 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 29808 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
-2022-02-02 23:19:44.054  INFO 29808 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
-2022-02-02 23:19:44.877  INFO 29808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-02 23:19:44.924  INFO 29808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interfaces.
-2022-02-02 23:19:45.714  INFO 29808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-02 23:19:45.724  INFO 29808 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-02 23:19:45.724  INFO 29808 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-02 23:19:45.726  WARN 29808 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
-2022-02-02 23:19:45.727  INFO 29808 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
-2022-02-02 23:19:45.727  INFO 29808 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-2022-02-02 23:19:45.727  INFO 29808 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-02-02 23:19:45.732  INFO 29808 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
-2022-02-02 23:19:45.841  INFO 29808 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-02 23:19:45.841  INFO 29808 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1739 ms
-2022-02-02 23:19:46.091  INFO 29808 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-02 23:19:46.718  INFO 29808 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
-2022-02-02 23:19:47.456  INFO 29808 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-02 23:19:47.722  INFO 29808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-02 23:19:47.916  INFO 29808 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
-2022-02-02 23:19:47.917  INFO 29808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-02 23:19:48.118  INFO 29808 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
-2022-02-02 23:19:51.023  INFO 29808 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-02 23:19:51.036  INFO 29808 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-02 23:19:51.395  WARN 29808 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-02 23:19:52.991  INFO 29808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-02 23:19:53.005  INFO 29808 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 9.387 seconds (JVM running for 10.548)
-2022-02-02 23:20:42.539  INFO 29808 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-02-02 23:20:42.540  INFO 29808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-02-02 23:20:42.540  INFO 29808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-02-02 23:21:05.848 ERROR 29808 --- [http-nio-8080-exec-3] c.t.l.s.impl.EventDataServiceImpl        : error :com.fasterxml.jackson.core.JsonParser : _constructError : Unexpected character ('-' (code 45)): was expecting double-quote to start field name
- at [Source: (String)"{--"id":"sconostgrb", "state":"FINISHED","timestamp":11401377405216}"; line: 1, column: 3]
-2022-02-02 23:22:46.014 ERROR 29808 --- [http-nio-8080-exec-6] c.t.l.s.impl.EventDataServiceImpl        : error :com.fasterxml.jackson.core.JsonParser : _constructError : Unexpected character ('-' (code 45)): was expecting double-quote to start field name
- at [Source: (String)"{----"id":"sconostgrb", "state":"FINISHED","timestamp":11401377405216}"; line: 1, column: 3]
-2022-02-02 23:24:40.160  INFO 29808 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 3339 ms
-2022-02-02 23:27:05.092  INFO 29808 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-02-02 23:27:05.867  INFO 29808 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-02 23:27:05.871  INFO 29808 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-02-02 23:27:05.902  INFO 29808 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-02-02 23:32:28.274  INFO 30504 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 30504 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
-2022-02-02 23:32:28.333  INFO 30504 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
-2022-02-02 23:32:29.257  INFO 30504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-02 23:32:29.344  INFO 30504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interfaces.
-2022-02-02 23:32:31.601  INFO 30504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-02 23:32:31.609  INFO 30504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-02 23:32:31.610  INFO 30504 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-02 23:32:31.611  WARN 30504 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
-2022-02-02 23:32:31.612  INFO 30504 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
-2022-02-02 23:32:31.612  INFO 30504 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-2022-02-02 23:32:31.612  INFO 30504 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-02-02 23:32:33.992  INFO 30504 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
-2022-02-02 23:32:34.233  INFO 30504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-02 23:32:34.233  INFO 30504 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5838 ms
-2022-02-02 23:32:34.561  INFO 30504 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-02 23:32:34.604  INFO 30504 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
-2022-02-02 23:32:34.717  INFO 30504 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-02 23:32:34.982  INFO 30504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-02 23:32:35.333  INFO 30504 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
-2022-02-02 23:32:35.334  INFO 30504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-02 23:32:35.362  INFO 30504 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
-2022-02-02 23:32:35.816  INFO 30504 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-02 23:32:35.824  INFO 30504 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-02 23:32:36.281  WARN 30504 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-02 23:32:38.968  INFO 30504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-02 23:32:38.980  INFO 30504 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 11.851 seconds (JVM running for 16.937)
-2022-02-02 23:32:57.780  INFO 30504 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-02-02 23:32:57.780  INFO 30504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-02-02 23:32:57.781  INFO 30504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-02-02 23:32:59.214  INFO 30504 --- [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 243 ms
-2022-02-02 23:46:50.089  INFO 30504 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-02-02 23:46:50.760  INFO 30504 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-02 23:46:50.762  INFO 30504 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-02-02 23:46:50.764  INFO 30504 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-02-02 23:53:01.557  INFO 19408 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 19408 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
-2022-02-02 23:53:02.260  INFO 19408 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
-2022-02-02 23:53:10.278  INFO 19408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-02-02 23:53:10.526  INFO 19408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 241 ms. Found 1 JPA repository interfaces.
-2022-02-02 23:53:19.300  INFO 19408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-02-02 23:53:19.394  INFO 19408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-02-02 23:53:19.395  INFO 19408 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-02-02 23:53:19.410  WARN 19408 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
-2022-02-02 23:53:19.410  INFO 19408 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
-2022-02-02 23:53:19.410  INFO 19408 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-2022-02-02 23:53:19.410  INFO 19408 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-02-02 23:53:26.747  INFO 19408 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
-2022-02-02 23:53:28.150  INFO 19408 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-02-02 23:53:28.151  INFO 19408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 25698 ms
-2022-02-02 23:53:30.793  INFO 19408 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-02-02 23:53:33.662  INFO 19408 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
-2022-02-02 23:53:38.746  INFO 19408 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-02-02 23:53:41.334  INFO 19408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-02 23:53:43.586  INFO 19408 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
-2022-02-02 23:53:43.588  INFO 19408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-02 23:53:44.133  INFO 19408 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
-2022-02-02 23:53:54.608  INFO 19408 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-02-02 23:53:54.674  INFO 19408 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-02-02 23:53:55.871  WARN 19408 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-02-02 23:54:00.390  INFO 19408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-02-02 23:54:00.396  INFO 19408 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 63.83 seconds (JVM running for 102.456)
-2022-02-02 23:54:23.061  INFO 19408 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-02-02 23:54:23.061  INFO 19408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-02-02 23:54:23.062  INFO 19408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-02-02 23:54:27.607  INFO 19408 --- [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 651 ms
-2022-02-02 23:58:24.256  INFO 19408 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-02-02 23:58:24.970  INFO 19408 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-02-02 23:58:24.972  INFO 19408 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-02-02 23:58:24.974  INFO 19408 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 01:56:56.441  INFO 11904 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 11904 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 01:56:56.469  INFO 11904 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 01:56:57.908  INFO 11904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 01:56:58.334  INFO 11904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 417 ms. Found 1 JPA repository interfaces.
+2022-02-03 01:57:01.232  INFO 11904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 01:57:01.240  INFO 11904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 01:57:01.240  INFO 11904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 01:57:01.241  WARN 11904 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 01:57:01.242  INFO 11904 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 01:57:01.242  INFO 11904 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 01:57:01.242  INFO 11904 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 01:57:01.469  INFO 11904 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 01:57:01.598  INFO 11904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 01:57:01.598  INFO 11904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5013 ms
+2022-02-03 01:57:01.816  INFO 11904 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 01:57:01.858  INFO 11904 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 01:57:01.970  INFO 11904 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 01:57:02.161  INFO 11904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 01:57:02.514  INFO 11904 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 01:57:02.516  INFO 11904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 01:57:02.546  INFO 11904 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 01:57:02.991  INFO 11904 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 01:57:02.999  INFO 11904 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 01:57:03.323  WARN 11904 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 01:57:05.145  INFO 11904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 01:57:05.163  INFO 11904 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 10.043 seconds (JVM running for 13.17)
+2022-02-03 01:57:10.131  INFO 11904 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 01:57:10.132  INFO 11904 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 01:57:10.133  INFO 11904 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 01:57:24.584 ERROR 11904 --- [http-nio-8080-exec-6] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 01:57:24.588 ERROR 11904 --- [http-nio-8080-exec-6] c.t.l.e.ApplicationExceptionHandler      : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:01:04.200  INFO 11904 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:01:04.296  INFO 11904 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:01:04.299  INFO 11904 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:01:04.301  INFO 11904 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:01:23.990  INFO 19612 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 19612 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:01:23.992  INFO 19612 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:01:24.600  INFO 19612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:01:24.644  INFO 19612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:01:25.054  INFO 19612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:01:25.062  INFO 19612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:01:25.062  INFO 19612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:01:25.063  WARN 19612 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:01:25.063  INFO 19612 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:01:25.063  INFO 19612 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:01:25.064  INFO 19612 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:01:25.067  INFO 19612 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:01:25.167  INFO 19612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:01:25.168  INFO 19612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1114 ms
+2022-02-03 02:01:25.318  INFO 19612 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:01:25.362  INFO 19612 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:01:25.472  INFO 19612 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:01:25.561  INFO 19612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:01:25.748  INFO 19612 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:01:25.750  INFO 19612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:01:25.778  INFO 19612 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:01:26.237  INFO 19612 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:01:26.245  INFO 19612 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:01:26.571  WARN 19612 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:01:27.267  INFO 19612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:01:27.276  INFO 19612 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.672 seconds (JVM running for 4.433)
+2022-02-03 02:01:35.002  INFO 19612 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:01:35.002  INFO 19612 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:01:35.003  INFO 19612 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:01:35.037 ERROR 19612 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:02:02.266  INFO 19612 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:02:02.301  INFO 19612 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:02:02.303  INFO 19612 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:02:02.305  INFO 19612 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:02:39.272  INFO 3396 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 3396 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:02:39.274  INFO 3396 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:02:39.870  INFO 3396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:02:39.914  INFO 3396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:02:40.337  INFO 3396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:02:40.345  INFO 3396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:02:40.346  INFO 3396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:02:40.347  WARN 3396 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:02:40.347  INFO 3396 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:02:40.347  INFO 3396 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:02:40.348  INFO 3396 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:02:40.351  INFO 3396 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:02:40.468  INFO 3396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:02:40.468  INFO 3396 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1133 ms
+2022-02-03 02:02:40.612  INFO 3396 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:02:40.657  INFO 3396 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:02:40.770  INFO 3396 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:02:40.859  INFO 3396 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:02:41.043  INFO 3396 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:02:41.045  INFO 3396 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:02:41.074  INFO 3396 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:02:41.530  INFO 3396 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:02:41.537  INFO 3396 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:02:41.871  WARN 3396 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:02:42.543  INFO 3396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:02:42.551  INFO 3396 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.68 seconds (JVM running for 4.454)
+2022-02-03 02:02:45.162  INFO 3396 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:02:45.162  INFO 3396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:02:45.164  INFO 3396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:02:45.195 ERROR 3396 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:03:07.411  INFO 3396 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:03:07.449  INFO 3396 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:03:07.451  INFO 3396 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:03:07.453  INFO 3396 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:03:31.170  INFO 29088 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 29088 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:03:31.173  INFO 29088 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:03:31.784  INFO 29088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:03:31.826  INFO 29088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:03:32.234  INFO 29088 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:03:32.241  INFO 29088 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:03:32.242  INFO 29088 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:03:32.243  WARN 29088 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:03:32.243  INFO 29088 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:03:32.244  INFO 29088 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:03:32.245  INFO 29088 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:03:32.248  INFO 29088 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:03:32.364  INFO 29088 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:03:32.365  INFO 29088 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1132 ms
+2022-02-03 02:03:32.511  INFO 29088 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:03:32.556  INFO 29088 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:03:32.666  INFO 29088 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:03:32.754  INFO 29088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:03:32.942  INFO 29088 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:03:32.944  INFO 29088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:03:32.973  INFO 29088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:03:33.425  INFO 29088 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:03:33.432  INFO 29088 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:03:33.773  WARN 29088 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:03:34.454  INFO 29088 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:03:34.463  INFO 29088 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.688 seconds (JVM running for 4.415)
+2022-02-03 02:03:37.434  INFO 29088 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:03:37.434  INFO 29088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:03:37.435  INFO 29088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:03:37.466 ERROR 29088 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:04:53.903  INFO 29088 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:04:53.950  INFO 29088 --- [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:04:53.950  INFO 29088 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:04:53.950  INFO 29088 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:05:35.544  INFO 15924 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 15924 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:05:35.547  INFO 15924 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:05:36.232  INFO 15924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:05:36.279  INFO 15924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:05:36.696  INFO 15924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:05:36.704  INFO 15924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:05:36.704  INFO 15924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:05:36.706  WARN 15924 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:05:36.706  INFO 15924 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:05:36.706  INFO 15924 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:05:36.706  INFO 15924 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:05:36.709  INFO 15924 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:05:36.813  INFO 15924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:05:36.813  INFO 15924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1204 ms
+2022-02-03 02:05:36.961  INFO 15924 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:05:37.004  INFO 15924 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:05:37.115  INFO 15924 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:05:37.201  INFO 15924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:05:37.405  INFO 15924 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:05:37.408  INFO 15924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:05:37.439  INFO 15924 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:05:37.911  INFO 15924 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:05:37.919  INFO 15924 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:05:38.292  WARN 15924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:05:39.000  INFO 15924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:05:39.008  INFO 15924 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.859 seconds (JVM running for 4.568)
+2022-02-03 02:05:42.957  INFO 15924 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:05:42.957  INFO 15924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:05:42.959  INFO 15924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-03 02:05:42.995 ERROR 15924 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:14:47.413  INFO 15924 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:14:48.039  INFO 15924 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:14:48.044  INFO 15924 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:14:48.050  INFO 15924 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:15:15.427  INFO 31032 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 31032 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:15:15.430  INFO 31032 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:15:16.005  INFO 31032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:15:16.050  INFO 31032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:15:16.528  INFO 31032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:15:16.535  INFO 31032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:15:16.535  INFO 31032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:15:16.537  WARN 31032 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:15:16.537  INFO 31032 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:15:16.537  INFO 31032 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:15:16.538  INFO 31032 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:15:16.553  INFO 31032 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:15:16.811  INFO 31032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:15:16.811  INFO 31032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1332 ms
+2022-02-03 02:15:16.961  INFO 31032 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:15:17.002  INFO 31032 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:15:17.109  INFO 31032 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:15:17.195  INFO 31032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:15:17.383  INFO 31032 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:15:17.385  INFO 31032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:15:17.413  INFO 31032 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:15:17.863  INFO 31032 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:15:17.871  INFO 31032 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:15:18.203  WARN 31032 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:15:18.934  INFO 31032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:15:18.941  INFO 31032 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.919 seconds (JVM running for 4.92)
+2022-02-03 02:15:21.423  INFO 31032 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:15:21.423  INFO 31032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:15:21.424  INFO 31032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:15:21.457 ERROR 31032 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:15:21.461  WARN 31032 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.test.loganalysisservices.exceptions.ApplicationExceptionHandler#handleAllException(ExceptionResponse, WebRequest)
+
+java.lang.IllegalStateException: Could not resolve parameter [0] in public final org.springframework.http.ResponseEntity<java.lang.Exception> com.test.loganalysisservices.exceptions.ApplicationExceptionHandler.handleAllException(com.test.loganalysisservices.exceptions.ExceptionResponse,org.springframework.web.context.request.WebRequest): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1327) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-02-03 02:15:21.464 ERROR 31032 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.io.FileNotFoundException: F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method) ~[na:na]
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[na:na]
+	at com.test.loganalysisservices.services.impl.EventDataServiceImpl.parseEventDataFromFile(EventDataServiceImpl.java:54) ~[classes/:na]
+	at com.test.loganalysisservices.services.impl.EventDataServiceImpl.createEventDataAndSetAlertForPassedThreshold(EventDataServiceImpl.java:79) ~[classes/:na]
+	at com.test.loganalysisservices.services.impl.EventDataServiceImpl.saveEventDataPassedThreshold(EventDataServiceImpl.java:117) ~[classes/:na]
+	at com.test.loganalysisservices.controllers.EventDataController.saveEventDataPassedThreshold(EventDataController.java:33) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-02-03 02:15:36.568  INFO 31032 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:15:36.604  INFO 31032 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:15:36.606  INFO 31032 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:15:36.608  INFO 31032 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:16:47.225  INFO 27540 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 27540 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:16:47.228  INFO 27540 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:16:47.831  INFO 27540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:16:47.880  INFO 27540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:16:48.299  INFO 27540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:16:48.307  INFO 27540 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:16:48.307  INFO 27540 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:16:48.308  WARN 27540 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:16:48.309  INFO 27540 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:16:48.309  INFO 27540 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:16:48.309  INFO 27540 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:16:48.312  INFO 27540 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:16:48.441  INFO 27540 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:16:48.441  INFO 27540 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1154 ms
+2022-02-03 02:16:48.600  INFO 27540 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:16:48.645  INFO 27540 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:16:48.764  INFO 27540 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:16:48.847  INFO 27540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:16:49.036  INFO 27540 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:16:49.038  INFO 27540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:16:49.068  INFO 27540 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:16:49.515  INFO 27540 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:16:49.522  INFO 27540 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:16:49.855  WARN 27540 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:16:50.545  INFO 27540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:16:50.553  INFO 27540 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.723 seconds (JVM running for 4.616)
+2022-02-03 02:16:53.403  INFO 27540 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:16:53.403  INFO 27540 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:16:53.404  INFO 27540 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:16:53.441 ERROR 27540 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:17:11.819  INFO 27540 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:17:11.856  INFO 27540 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:17:11.858  INFO 27540 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:17:11.860  INFO 27540 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:17:28.125  INFO 21512 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 21512 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:17:28.129  INFO 21512 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:17:28.712  INFO 21512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:17:28.757  INFO 21512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:17:29.164  INFO 21512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:17:29.172  INFO 21512 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:17:29.173  INFO 21512 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:17:29.174  WARN 21512 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:17:29.174  INFO 21512 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:17:29.174  INFO 21512 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:17:29.175  INFO 21512 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:17:29.178  INFO 21512 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:17:29.277  INFO 21512 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:17:29.277  INFO 21512 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1089 ms
+2022-02-03 02:17:29.424  INFO 21512 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:17:29.468  INFO 21512 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:17:29.580  INFO 21512 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:17:29.666  INFO 21512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:17:29.855  INFO 21512 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:17:29.857  INFO 21512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:17:29.887  INFO 21512 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:17:30.343  INFO 21512 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:17:30.351  INFO 21512 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:17:30.701  WARN 21512 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:17:31.374  INFO 21512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:17:31.382  INFO 21512 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.658 seconds (JVM running for 4.461)
+2022-02-03 02:17:36.330  INFO 21512 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:17:36.330  INFO 21512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:17:36.331  INFO 21512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:17:36.361 ERROR 21512 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:17:40.206 ERROR 21512 --- [http-nio-8080-exec-2] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:18:34.856  INFO 21512 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:18:34.892  INFO 21512 --- [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:18:34.894  INFO 21512 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:18:34.896  INFO 21512 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:18:55.188  INFO 22488 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 22488 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:18:55.190  INFO 22488 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:18:55.764  INFO 22488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:18:55.808  INFO 22488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:18:56.212  INFO 22488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:18:56.219  INFO 22488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:18:56.220  INFO 22488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:18:56.221  WARN 22488 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:18:56.221  INFO 22488 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:18:56.222  INFO 22488 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:18:56.222  INFO 22488 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:18:56.225  INFO 22488 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:18:56.352  INFO 22488 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:18:56.352  INFO 22488 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1108 ms
+2022-02-03 02:18:56.497  INFO 22488 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:18:56.541  INFO 22488 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:18:56.654  INFO 22488 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:18:56.743  INFO 22488 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:18:56.929  INFO 22488 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:18:56.931  INFO 22488 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:18:56.960  INFO 22488 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:18:57.416  INFO 22488 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:18:57.423  INFO 22488 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:18:57.762  WARN 22488 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:18:58.439  INFO 22488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:18:58.446  INFO 22488 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.661 seconds (JVM running for 4.424)
+2022-02-03 02:19:03.152  INFO 22488 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:19:03.153  INFO 22488 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:19:03.154  INFO 22488 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:19:03.188 ERROR 22488 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:19:15.738  INFO 22488 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:19:15.778  INFO 22488 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:19:15.780  INFO 22488 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:19:15.781  INFO 22488 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:20:01.331  INFO 13072 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 13072 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:20:01.334  INFO 13072 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:20:01.970  INFO 13072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:20:02.013  INFO 13072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:20:02.411  INFO 13072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:20:02.418  INFO 13072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:20:02.419  INFO 13072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:20:02.420  WARN 13072 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:20:02.420  INFO 13072 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:20:02.420  INFO 13072 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:20:02.420  INFO 13072 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:20:02.423  INFO 13072 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:20:02.543  INFO 13072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:20:02.543  INFO 13072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1152 ms
+2022-02-03 02:20:02.690  INFO 13072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:20:02.734  INFO 13072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:20:02.843  INFO 13072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:20:02.931  INFO 13072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:20:03.122  INFO 13072 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:20:03.124  INFO 13072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:20:03.152  INFO 13072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:20:03.607  INFO 13072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:20:03.615  INFO 13072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:20:03.950  WARN 13072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:20:04.655  INFO 13072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:20:04.663  INFO 13072 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.75 seconds (JVM running for 4.563)
+2022-02-03 02:20:08.118  INFO 13072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:20:08.118  INFO 13072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:20:08.119  INFO 13072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:20:08.149 ERROR 13072 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:20:12.210 ERROR 13072 --- [http-nio-8080-exec-2] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:21:04.239  INFO 13072 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:21:04.276  INFO 13072 --- [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:21:04.278  INFO 13072 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:21:04.280  INFO 13072 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:21:23.681  INFO 31324 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 31324 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:21:23.683  INFO 31324 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:21:24.302  INFO 31324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:21:24.346  INFO 31324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:21:24.730  INFO 31324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:21:24.738  INFO 31324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:21:24.738  INFO 31324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:21:24.739  WARN 31324 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:21:24.739  INFO 31324 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:21:24.740  INFO 31324 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:21:24.740  INFO 31324 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:21:24.743  INFO 31324 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:21:24.875  INFO 31324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:21:24.875  INFO 31324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1139 ms
+2022-02-03 02:21:25.030  INFO 31324 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:21:25.073  INFO 31324 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:21:25.182  INFO 31324 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:21:25.268  INFO 31324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:21:25.459  INFO 31324 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:21:25.461  INFO 31324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:21:25.491  INFO 31324 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:21:25.947  INFO 31324 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:21:25.955  INFO 31324 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:21:26.291  WARN 31324 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:21:26.990  INFO 31324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:21:26.997  INFO 31324 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.718 seconds (JVM running for 4.469)
+2022-02-03 02:21:31.795  INFO 31324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:21:31.795  INFO 31324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:21:31.796  INFO 31324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:21:31.833 ERROR 31324 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:21:39.061  INFO 31324 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:21:39.096  INFO 31324 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:21:39.100  INFO 31324 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:21:39.102  INFO 31324 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-03 02:22:35.189  INFO 29416 --- [main] c.t.l.LogAnalysisServiceApplication      : Starting LogAnalysisServiceApplication using Java 17.0.1 on LAPTOP-RMCFJOC4 with PID 29416 (F:\developmentWorkspace\log-analysis-service\target\classes started by mishr in F:\developmentWorkspace\log-analysis-service)
+2022-02-03 02:22:35.192  INFO 29416 --- [main] c.t.l.LogAnalysisServiceApplication      : The following profiles are active: default
+2022-02-03 02:22:35.773  INFO 29416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-03 02:22:35.817  INFO 29416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interfaces.
+2022-02-03 02:22:36.236  INFO 29416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-03 02:22:36.244  INFO 29416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-03 02:22:36.244  INFO 29416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-03 02:22:36.246  WARN 29416 --- [main] o.a.catalina.core.AprLifecycleListener   : This listener must only be nested within Server elements, but is in [TomcatEmbeddedContext].
+2022-02-03 02:22:36.246  INFO 29416 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+2022-02-03 02:22:36.246  INFO 29416 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-02-03 02:22:36.246  INFO 29416 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-02-03 02:22:36.250  INFO 29416 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+2022-02-03 02:22:36.375  INFO 29416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-03 02:22:36.375  INFO 29416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1129 ms
+2022-02-03 02:22:36.521  INFO 29416 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-03 02:22:36.565  INFO 29416 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-02-03 02:22:36.675  INFO 29416 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-03 02:22:36.760  INFO 29416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-03 02:22:36.952  INFO 29416 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2022-02-03 02:22:36.955  INFO 29416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-03 02:22:36.987  INFO 29416 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2022-02-03 02:22:37.449  INFO 29416 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-03 02:22:37.457  INFO 29416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:22:37.794  WARN 29416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-03 02:22:38.476  INFO 29416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-03 02:22:38.484  INFO 29416 --- [main] c.t.l.LogAnalysisServiceApplication      : Started LogAnalysisServiceApplication in 3.692 seconds (JVM running for 4.467)
+2022-02-03 02:22:42.877  INFO 29416 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-03 02:22:42.878  INFO 29416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-03 02:22:42.879  INFO 29416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-03 02:22:42.911 ERROR 29416 --- [http-nio-8080-exec-1] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : F:\developmentWorkspace\log-analysis-service\src\main\resources\lo (The system cannot find the file specified)
+2022-02-03 02:23:04.358 ERROR 29416 --- [http-nio-8080-exec-6] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : "" (The filename, directory name, or volume label syntax is incorrect)
+2022-02-03 02:23:22.119 ERROR 29416 --- [http-nio-8080-exec-7] c.t.l.s.impl.EventDataServiceImpl        : error :java.io.FileInputStream : open0 : null (The system cannot find the file specified)
+2022-02-03 02:23:59.566  INFO 29416 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-02-03 02:23:59.600  INFO 29416 --- [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-03 02:23:59.602  INFO 29416 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-03 02:23:59.604  INFO 29416 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

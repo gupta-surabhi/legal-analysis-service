@@ -1,10 +1,6 @@
 package com.test.loganalysisservices.exceptions;
 
-import java.time.LocalDateTime;
-import java.util.Optional;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,15 +15,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ApplicationExceptionHandler  extends ResponseEntityExceptionHandler{
 	
-	private static final Logger logger = LoggerFactory.getLogger(ApplicationExceptionHandler.class);
-	
 	@ExceptionHandler(Exception.class)
-	public final ResponseEntity<Exception> handleAllException(Exception ex, WebRequest req){
+	public final ResponseEntity<ExceptionResponse> handleAllException(Exception ex, WebRequest req){
 		
-		ExceptionResponse response = new ExceptionResponse(LocalDateTime.now(), ex.getMessage());
-		logger.error(prepareErrorLog(ex));
-		
-		return ResponseEntity.of(Optional.of(response));
+		ExceptionResponse response = new ExceptionResponse(ex.getMessage());	
+		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		
 	}
 	

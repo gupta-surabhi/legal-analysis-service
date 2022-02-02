@@ -3,6 +3,7 @@ package com.test.loganalysisservices.services.impl;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +14,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +47,9 @@ public class EventDataServiceImpl implements EventDataService {
 	@Override
 	public Optional<List<LogData>> parseEventDataFromFile(String path)
 			throws JsonParseException, JsonMappingException, IOException {
+		
+		if(StringUtils.isBlank(path))
+			return Optional.ofNullable(null);
 
 		try (BufferedInputStream bufferInputStream = new BufferedInputStream(new FileInputStream(path));
 				BufferedReader bufferReader = new BufferedReader(
@@ -58,7 +63,10 @@ public class EventDataServiceImpl implements EventDataService {
 				}
 			});
 			return Optional.of(logData);
-		} catch (IOException ex) {
+		} catch (FileNotFoundException ex) {
+			logger.error(ApplicationExceptionHandler.prepareErrorLog(ex));
+			throw ex;
+		}catch (IOException ex) {
 			logger.error(ApplicationExceptionHandler.prepareErrorLog(ex));
 			throw ex;
 		}
