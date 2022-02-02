@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: default
+  application:
+    name: LOG-ANALYSIS-SERVICE
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+#    ;DB_CLOSE_DELAY=-1
+#java -classpath ..\lib\hsqldb-jdk8.jar org.hsqldb.Server --database.0 test
+    url: jdbc:hsqldb:mem:test;DB_CLOSE_DELAY=-1
+    username: sa
+    password: 
+    type: com.zaxxer.hikari.HikariDataSource
+  hsql:
+    console:
+      enables: true
+  jackson:
+    default-property-inclusion: NON_EMPTY
+      
+    
+
+logging:
+  level:
+    root: info
+  file:
+    name: ${spring.application.name}
+    path: ./
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
