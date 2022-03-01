@@ -1,6 +1,0 @@
-{"id":"sconostgra", "state":"STARTED","type":"APPLICATION_LOG", "host":"12345","timestamp":1491377495212}
-{"id":"sconostgrb", "state":"STARTED", "timestamp":11401377405213} 
-{"id":"sconostgrc", "state":"FINISHED", "timestamp":1491377408218}
-{"id":"sconostgra", "state":"FINISHED","type":"APPLICATION_LOG", "host":"12345","timestamp":1491377495217}
-{"id":"sconostgrc", "state":"STARTED", "timestamp":1491377408210}
-{"id":"sconostgrb", "state":"FINISHED","timestamp":11401377405216}
