@@ -17,6 +17,9 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.test.loganalysisservices.entities.EventData;
 import com.test.loganalysisservices.services.EventDataService;
 
+import io.swagger.annotations.ApiOperation;
+
+
 @RestController
 @RequestMapping("eventData")
 public class EventDataController {
@@ -24,6 +27,14 @@ public class EventDataController {
 	@Autowired
 	private EventDataService eventDataService;
 	
+	/*
+	 * @Tag(description =
+	 * "Accepts log file path, load log from it and return threshhold exceeded event data"
+	 * , name = "Service Description")
+	 * 
+	 * @ApiResponse(description = "return threshhold exceeded event data")
+	 */
+	@ApiOperation(value = "Accepts log file path, load log from it and return threshhold exceeded event data")
 	@PostMapping("/")
 	public ResponseEntity<List<EventData>> saveEventDataPassedThreshold(@RequestBody String path)
 			throws JsonParseException, JsonMappingException, IOException {

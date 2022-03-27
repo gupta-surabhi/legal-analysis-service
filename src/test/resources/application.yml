@@ -31,9 +31,11 @@ logging:
     name: ${spring.application.name}
     path: ./
 
-springdoc:
-  api-docs:
-    path: /api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    operationsSorter: method
+
+# default for springfox  http://localhost:8080/swagger-ui/ 
+#springdoc:
+#  api-docs:
+#    path: /api-docs
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    operationsSorter: method

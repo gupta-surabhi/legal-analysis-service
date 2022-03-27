@@ -1,9 +1,9 @@
 com\test\loganalysisservices\LogAnalysisServiceApplication.class
-com\test\loganalysisservices\entities\EventData.class
 com\test\loganalysisservices\services\impl\EventDataServiceImpl.class
 com\test\loganalysisservices\exceptions\ApplicationExceptionHandler.class
 com\test\loganalysisservices\services\EventDataService.class
 com\test\loganalysisservices\controllers\EventDataController.class
+com\test\loganalysisservices\modal\LogData.class
+com\test\loganalysisservices\entities\EventData.class
 com\test\loganalysisservices\exceptions\ExceptionResponse.class
 com\test\loganalysisservices\repositories\EventDataRepository.class
-com\test\loganalysisservices\modal\LogData.class
