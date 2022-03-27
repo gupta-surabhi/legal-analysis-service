@@ -1,0 +1,6 @@
+
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/com.test/log-analysis-service/pom.properties
+target/classes/META-INF/maven/com.test/log-analysis-service/pom.xml
+target/test-classes/application.yml
+target/test-classes/logfile.txt
