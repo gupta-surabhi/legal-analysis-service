@@ -13,6 +13,7 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+//https://springdoc.org/#migrating-from-springfox migration to open api
 @EnableOpenApi
 @OpenAPIDefinition(info = @Info(title = "Log Analysis API", version = "2.5.8", description = "Log Analysis", contact = @Contact(name = "Surabhi Gupta")))
 @SpringBootApplication
