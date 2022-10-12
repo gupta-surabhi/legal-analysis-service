@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("eventData")
+//@Tags(@Tag(name = "header of the controller"))
 public class EventDataController {
 
 	@Autowired
@@ -34,6 +35,7 @@ public class EventDataController {
 	 * 
 	 * @ApiResponse(description = "return threshhold exceeded event data")
 	 */
+	//@Operation(summary = "endpoint information")
 	@ApiOperation(value = "Accepts log file path, load log from it and return threshhold exceeded event data")
 	@PostMapping("/")
 	public ResponseEntity<List<EventData>> saveEventDataPassedThreshold(@RequestBody String path)
