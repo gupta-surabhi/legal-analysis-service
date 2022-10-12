@@ -35,3 +35,11 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html # default   http://localhost:8080/api/v3/api-docs/swagger-config
     operationsSorter: method
+    
+# springdoc.swagger-ui.path=/swagger-ui/  <-- http://localhost:${port}/log-analysis-service/swagger-ui/ <-- swagger 3
+#springdoc.swagger-ui.operations-sorter=method
+#springdoc.swagger-ui.use-root-path=true
+#springdoc.api-docs.path=/api-docs <-- http://localhost:${port}/log-analysis-service/api-docs/
+#management.health.defaults.enabled=true
+#management.endpoint.health.show-details=always <-- http://localhost:${port}/log-analysis-service/actuator/health
+#management.health.ldap.enabled=false
