@@ -36,6 +36,19 @@ public class EventDataController {
 	 * @ApiResponse(description = "return threshhold exceeded event data")
 	 */
 	//@Operation(summary = "endpoint information")
+	/*
+	@Operation(summary = "title", description = "")
+    	@Parameters({@Parameter(name = "", description = "", required = true, content = @Content(schema = @Schema(type = "int"))),
+            @Parameter(name ="", description = "", required = true, content = @Content (schema = @Schema(type = "date"))),
+            @Parameter(name ="", description = "", required = true, content = @Content (schema = @Schema(type = "date")))})
+	#Swagger and spring open-api properties
+springdoc.swagger-ui.path=/swagger-ui/
+springdoc.swagger-ui.operations-sorter=method
+springdoc.swagger-ui.use-root-path=true
+springdoc.api-docs.path=/api-docs
+/context-path/api-docs 
+/context-path/swagger-ui/
+	*/
 	@ApiOperation(value = "Accepts log file path, load log from it and return threshhold exceeded event data")
 	@PostMapping("/")
 	public ResponseEntity<List<EventData>> saveEventDataPassedThreshold(@RequestBody String path)
