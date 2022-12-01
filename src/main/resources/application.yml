@@ -1,4 +1,7 @@
 spring:
+  output:
+    ansi:
+      enabled: ALWAYS #to display colours
   profiles:
     active: default
   application:
@@ -23,6 +26,9 @@ spring:
     default-property-inclusion: NON_EMPTY
 
 logging:
+  pattern:
+    console: "%clr{%d{ISO8601}}{black} %highlight(%-5level) [%clr{%t}{blue}] %clr{%C{1.}}{yellow}: %msg%n%xThrowable"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
   level:
     root: info
   file:
