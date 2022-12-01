@@ -1,0 +1,28 @@
+<!--
+<configuration status="WARN">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+           &lt;!&ndash; <PatternLayout disableAnsi="false"  pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>&ndash;&gt;
+            <PatternLayout pattern="%clr{%d{ISO8601}}{black} %highlight(%-5level) [%clr{%t}{blue}] %clr{%C{1.}}:{yellow} %msg%n%xThrowable" />
+        </Console>
+        <RollingFile name="rollingFile" fileName="${logVariable.filePath}/${logVariable.fileName}.log" filePattern="${logVariable.filePath}/${logVariable.archivedDirectory}/${logVariable.fileName}-%d{yyyy-MM-dd}.%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <root level="INFO">
+        <appender-ref ref="rollingFile" />
+        <appender-ref ref="console" />
+    </root>
+
+    <Loggers>
+        <Logger name="com.mydemoprojectr" level="debug">
+            <AppenderRef ref="rollingFile"/>
+            <AppenderRef ref="console"/>
+        </Logger>
+    </Loggers>
+
+</configuration>-->
